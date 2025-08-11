@@ -2,7 +2,7 @@
 name = "memorable-wordlist"
 version = "0.1.7"
 authors = ["David Roundy <daveroundy@gmail.com>"]
-edition = "2018"
+edition = "2024"
 
 description = "List of memorable words"
 license = "MIT/Apache-2.0"
@@ -11,4 +11,4 @@ repository = "https://github.com/droundy/memorable-wordlist"
 readme = "README.md"
 
 [dependencies]
-rand = "0.7.0"
+rand = "0.9.2"

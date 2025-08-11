@@ -40,12 +40,12 @@ pub const JAVASCRIPT: &str = include_str!("../memorable-wordlist.js");
 const NUM_BITS: usize = 14;
 
 fn words_for_bits(bits: usize) -> impl Iterator<Item=&'static str> {
-    use rand::seq::SliceRandom;
+    use rand::prelude::IndexedRandom;
 
     let num_words = if bits % NUM_BITS == 0 { bits/NUM_BITS } else { bits/NUM_BITS + 1 };
     let number_per_word = (bits as f64/num_words as f64).exp2() as usize;
     let mut words = Vec::with_capacity(num_words);
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
     for _ in 0..num_words {
         words.push(WORDS[0..number_per_word].choose(&mut rng).unwrap());
     }
